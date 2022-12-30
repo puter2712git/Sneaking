@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerInput : MonoBehaviour
@@ -8,10 +6,18 @@ public class PlayerInput : MonoBehaviour
 	public float horizontalMove { private set; get; }
 	public float verticalMove { private set; get; }
 
+	/* Detect mouse move input */
+	public float mouseXMove { private set; get; }
+	public float mouseYMove { private set; get; }
+
 	private void Update()
 	{
 		/* Get inputs of move */
-		horizontalMove = Input.GetAxis("Horizontal");
-		verticalMove = Input.GetAxis("Vertical");
+		horizontalMove = Input.GetAxisRaw("Horizontal");
+		verticalMove = Input.GetAxisRaw("Vertical");
+
+		/* Get inputs of rotate */
+		mouseXMove = Input.GetAxisRaw("Mouse X");
+		mouseYMove = Input.GetAxisRaw("Mouse Y");
 	}
 }
