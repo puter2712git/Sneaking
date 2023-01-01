@@ -2,10 +2,10 @@ using UnityEngine;
 
 public class PlayerRotate : MonoBehaviour
 {
-	private const float ROTATION_X_LIMIT = 90f;
+	private const float ROTATION_X_LIMIT = 90F;
 
 	[SerializeField]
-	private Camera _camera;
+	private new Camera camera;
 
 	private PlayerInput _playerInput;
 
@@ -44,6 +44,6 @@ public class PlayerRotate : MonoBehaviour
 		_xRotation = Mathf.Clamp(_xRotation, -ROTATION_X_LIMIT, ROTATION_X_LIMIT);
 
 		transform.eulerAngles = new Vector3(0f, _yRotation, 0f);
-		_camera.transform.eulerAngles = new Vector3(_xRotation, transform.eulerAngles.y, 0f);
+		camera.transform.eulerAngles = new Vector3(_xRotation, _yRotation, 0f);
 	}
 }

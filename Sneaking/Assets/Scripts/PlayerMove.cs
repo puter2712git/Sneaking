@@ -5,7 +5,7 @@ public class PlayerMove : MonoBehaviour
 	private PlayerInput _playerInput;
 
 	[SerializeField]
-	private float _moveSpeed;
+	private float moveSpeed;
 	private float _horizontalMove;
 	private float _verticalMove;
 
@@ -27,6 +27,6 @@ public class PlayerMove : MonoBehaviour
 		_verticalMove = _playerInput.verticalMove;
 
 		_moveDir = new Vector3(_horizontalMove, 0f, _verticalMove).normalized;
-		transform.Translate(_moveDir * _moveSpeed * Time.deltaTime);
+		transform.Translate(_moveDir * moveSpeed * Time.deltaTime);
 	}
 }
